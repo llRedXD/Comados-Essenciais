@@ -3,7 +3,9 @@
 - Precisamos saber qual o perfil que estamos conectados com o comando `xrandr` alem disso também é possível saber as resoluções com mais facilidade
 Exemplo:
 ``` 
-~$ xrandr 
+xrandr 
+```
+```
 Screen 0: minimum 1 x 1, current 800 x 600, maximum 8192 x 8192
 Virtual1 connected primary 800x600+0+0 (normal left inverted right x axis y axis) 0mm x 0mm
    800x600       60.00*+  60.32  
@@ -40,7 +42,7 @@ Virtual8 disconnected (normal left inverted right x axis y axis)
 - Depois de descobrir a resolução da sua tela escreva o comando `cvt` com sua resolução
 Exemplo:
 ```
-~$ cvt 1920 1080 60
+cvt 1920 1080 60
 ```
 - Copie o resultado apos o "Modeline"
 Exemplo:
@@ -51,17 +53,17 @@ Modeline "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hs
 - Crie um novo modo(Resolução) para o xrand com o comando `sudo xrandr --new mode` e o resultado do seu Modeline
 Exemplo:
 ```
-~$ xrandr --newmode "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
+xrandr --newmode "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
 ```
 - Depois disso escolha seu novo modo com o comando `sudo xrandr --addmode` o Perfil ativo e o "modo" criado
 Exemplo:
 ```
-~$ xrandr --addmode Virtual1 "1920x1080_60.00"
+xrandr --addmode Virtual1 "1920x1080_60.00"
 ```
 - Após isso já é possivel alterar a resolução para a resolução desejada, com o comando `sudo xrandr -s` e a resolução desejada 
 Exemplo:
 ```
-~$ xrandr -s 1920x1080
+xrandr -s 1920x1080
 ```
 - Mas para salvar esssas configuracões vocês terão que utilizar o comando `gedit ~/.profile` onde abrirá um arquivo de texto no final dele vocês colarão os seus comandos `sudo xrandr --newmode` e `sudo xrandr --addmode` e salvarão o arquivo(`Ctrl+S`) assim sera vocês terão o perfil dessa resolução com um acesso muito mais facíl
 Exemplo:
@@ -97,6 +99,8 @@ fi
 xrandr --newmode "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
 xrandr --addmode Virtual1 "1920x1080_60.00"
 ```
+Então cada vez que ligar e logar só colocar o comando `xrandr -s` e sua resolução
+
 # Fim
 
 ![tumblr_inline_p9ggi9Xp4W1qgcvsy_500](https://user-images.githubusercontent.com/59977779/125785589-2f000580-a14c-4bc2-98c0-2fe72681303f.gif)
